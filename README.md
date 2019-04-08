@@ -10,15 +10,20 @@ Installing avr-gcc on MacOS w/Brew
 ```console
 brew tap osx-cross/avr
 brew install avr-gcc
-
-# verify installation
+```
+verify installation
+```console
 avr-gcc --version
+```
 
+### Installing Avrdude on MacOS w/Brew
+```console
 brew install avrdude
 or
 brew install avrdude --with-usb
-
-# verify install
+```
+verify installation
+```console
 avrdude -v
 ```
 
@@ -47,18 +52,16 @@ sudo ./build_script
 The script below assumes the microcontroller enumerates as device /dev/ttyUSB0.
 
 create file: load_script
-```
+```console
 avrdude -c arduino -p m32 -P /dev/ttyUSB0 -b 19200 -U flash:w:main.hex
 ```
 
-
 set execute permissions on load_script
-```
+```console
 sudo chmod 755 load_script
-
 ```
 run load_script to upload the code
-```
+```console
 sudo ./load_script
 ```
 
