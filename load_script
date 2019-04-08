@@ -1,0 +1,1 @@
+avrdude -c arduino -p m32 -P /dev/ttyUSB0 -b 19200 -U flash:w:main.hex
