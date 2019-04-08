@@ -27,7 +27,7 @@ avrdude -v
 create new script:
 
 avr-gcc main.c -g -Os -mmcu=atmega32 -c main.c
-avr-gcc -gt -mmcu=atmega32 -o main.elf main.o
+avr-gcc -g -mmcu=atmega32 -o main.elf main.o
 avr-objcopy -j .text -j .data -O ihex main.elf main.hex
 avr-size --format=avr --mcu=atmega32 main.elf
 
