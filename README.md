@@ -101,7 +101,7 @@ PRG = usbtiny
 Putting makefile to use::
 ```console
 make clean #cleans up the build folder
-make flash #builds the project and program device
+make flash #builds the project and programs device
 ```
 
 
