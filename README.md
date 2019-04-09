@@ -27,6 +27,19 @@ verify installation
 avrdude -v
 ```
 
+### The code
+The code below sets the data direction bit 5 on PORTB to an output. The while loop toggles PORTB bit 5 every 1000 milliseconds indefinitely.
+```c++
+DDRB |= _BV(PB5);
+
+while (1)
+{
+    // toggle led
+    PORTB ^= _BV(PB5);
+    _delay_ms(1000);
+
+}
+```
 ### Compiling Blinky
 To compile our source code we want to create a build script to autmoate the process. This script also converts the object files to avr compatible hex format. This hex file is then used to update the code on the microcontroller.
 
