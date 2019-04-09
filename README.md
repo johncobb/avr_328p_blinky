@@ -1,5 +1,7 @@
 ## Running Blinky
 
+![Micro](https://www.elprocus.com/wp-content/uploads/2014/06/410.jpg)
+
 This project walks you through the process of setting your toolchain to compile/deploy C code for AVR microcontrollers. Today there are many IDEs that magically automate this process for you. These are convenient but obscure much of what is going on behind the scenes from the developer. The key to becoming a better embedded engineer is understanding the toolchain compilation/deployment workflow. When the time comes to take your product to production these scripts will come in handy.
 
 ### Prerequisites:
@@ -78,6 +80,28 @@ run load_script to upload the code
 sudo ./load_script
 ```
 
+### Moving forward
+Ok, we built the toolchain and deployment scripts now its time to use what we will use for production. Makefiles allow us to place all build/clean/flash commands into one simple to use file. Each microcontroller has a unique set of parameters prior to compiling and deploying. These commands are listed a the top of the Make file and are easily changed.
+
+Below is a snippet of Makefile parametes that would be changed to target your project
+```console
+# parameters (make changes accordingly)
+# project name
+PRJ = main
+# avr mcu
+MCU = atmega328p
+# mcu clock frequency
+CLK = 16000000
+# avr programmer (and port if necessary)
+# e.g. PRG = usbtiny -or- PRG = arduino -P /dev/tty.usbmodem411
+PRG = usbtiny
+```
+
+Putting makefile to use::
+```console
+make clean #cleans up the build folder
+make flash #builds the project and program device
+```
 
 
 #### References:
