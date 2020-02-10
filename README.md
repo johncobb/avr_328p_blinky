@@ -5,6 +5,11 @@
 ## Building an AVR toolchain from the command line
 This project walks you through the process of setting your toolchain to compile/deploy C code for AVR microcontrollers. Today there are many IDEs that magically automate this process for you. These are convenient but obscure much of what is going on behind the scenes from the developer. The key to becoming a better embedded engineer is understanding the toolchain compilation/deployment workflow. When the time comes to take your product to production these scripts will come in handy.
 
+
+### I'm going to write a great novel
+Here is my novel
+
+
 ### Prerequisites:
 
 ### Installing avr-gcc
