@@ -84,7 +84,11 @@ sudo ./load_script
 ### Moving forward
 Ok, we built the toolchain and deployment scripts now its time to use what we will use for production. Makefiles allow us to place all build/clean/flash commands into one simple to use file. Each microcontroller has a unique set of parameters prior to compiling and deploying. These commands are listed a the top of the Make file and are easily changed.
 
-Below is a snippet of Makefile parametes that would be changed to target your project
+Below is a snippet of Makefile parametes that would be changed to target your project.
+
+## Important Note
+Make sure the Makefile CLK matches the target device's clock.
+
 ```console
 # parameters (make changes accordingly)
 # project name
